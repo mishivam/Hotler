@@ -1,1 +1,13 @@
 /token
+
+#client
+/hotler-next/node_modules
+/hotler-next/.next
+/hotler-next/yarn.lock
+/hotler-next/.env
+
+#server
+/hotler-server/node_modules
+/hotler-server/dist
+/hotler-server/yarn.lock
+/hotler-server/.env

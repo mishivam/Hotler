@@ -10,3 +10,5 @@ export const {
   DB_PORT,
   DB_NAME,
 } = process.env;
+
+export const isDev = NODE_ENV ? NODE_ENV === "development" : true;

@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
-// import dbConfig from "@config/db.config.js";
 import dbConfig from "../config/db.config";
+import logger from "../utils/logger.utils";
 
 const { database, username, password, dialect, host } = dbConfig;
 
@@ -21,9 +21,9 @@ export const connectToDb = async (cb?: () => void) => {
     cb && cb();
     await sequelize.authenticate();
 
-    console.log(`\n\t✅ [success]: connected to database!  `);
+    logger.info(`✅ [success]: connected to database!  `);
   } catch (e) {
-    console.log("❌ [error]: can't connect to db! \n", e);
+    logger.error("❌ [error]: can't connect to db! ", e);
     process.exit(1);
   }
 };

@@ -10,9 +10,7 @@
     "noImplicitAny": false,
     "strictNullChecks": false,
     "moduleResolution": "node",
-    "sourceMap": true,
-
-    "baseUrl": "."
+    "sourceMap": true
   },
   "include": ["src/**/*"],
   "ts-node": {

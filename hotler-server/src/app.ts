@@ -1,7 +1,6 @@
 import express, { Express, Request, Response } from "express";
 
-import { connectToDb } from "./db";
-
+import { connectToDb } from "./db/models";
 //middleware import
 import { morganMiddleware } from "./middleware";
 

@@ -1,5 +1,6 @@
 import winston from "winston";
 import { isDev } from "../config/env.config";
+
 const transportOptions = {
   file: {
     level: "info",
@@ -14,7 +15,7 @@ const transportOptions = {
     level: "debug",
     handleExceptions: true,
     json: false,
-    colorize: true,
+    colorize: false,
   },
 };
 
@@ -41,7 +42,7 @@ const format = winston.format.combine(
   winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
   winston.format.colorize({ all: true }),
   winston.format.printf(
-    (info) => `${info.timestamp} [${info.level}]: ${info.message}`
+    (info) => `${info.timestamp} ${info.label} [${info.level}]: ${info.message}`
   )
 );
 
